@@ -16,6 +16,7 @@ int echo = 6;
 int reactDist = 30; //Centimeters
 void setup() 
 {
+  Serial.begin(115200);
   pinMode(button, INPUT_PULLUP);
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
@@ -91,48 +92,42 @@ void Maneuver()
 //    }
 
 //RANDOM DIRECTION METHOD
-//  int rng = random(0, 4);
-//  switch(rng)
-//  {
-//    case 0:
-//    Left();
-//    delay(150);
-//    Stop();
-//    delay(150);
-//    break;
-//    case 1:
-//    Right();
-//    delay(150);
-//    Stop();
-//    delay(150);
-//    break;
-//    case 2:
-//    Backward();
-//    delay(150);
-//    Stop();
-//    delay(150);
-//    Left();
-//    delay(150);
-//    break;
-//    case 3:
-//    Backward();
-//    delay(150);
-//    Stop();
-//    delay(150);
-//    Right();
-//    delay(150);
-//    break;
-//  }
+  int rng = random(0, 4);
+  switch(rng)
+  {
+    case 0:
+    Left();
+    delay(150);
+    Stop();
+    delay(150);
+    break;
+    case 1:
+    Right();
+    delay(150);
+    Stop();
+    delay(150);
+    break;
+    case 2:
+    Backward();
+    delay(150);
+    Stop();
+    delay(150);
+    Left();
+    delay(150);
+    break;
+    case 3:
+    Backward();
+    delay(150);
+    Stop();
+    delay(150);
+    Right();
+    delay(150);
+    break;
+  }
 }
 
 void loop() 
 {
-  if(isOn)
-  {
-    if(Distance() <= reactDist)
-      Maneuver();
-    else
-      Forward();
-    delay(100);
-  }
+  Serial.println(Distance());
+  delay(100);
 }
