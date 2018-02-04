@@ -1,0 +1,330 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:modules
+LIBS:l298
+LIBS:L298N
+LIBS:HC-SR04
+LIBS:Nano_Robot_Rover-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 8350 7000 0    60   ~ 0
+KTC Robot Rover (Arduino Nano)\nDesigned and Programmed by:\nAidan Lawrence\nwww.aidanlawrence.com\n
+Text Notes 7450 7500 0    60   ~ 0
+KTC Robot Rover (Arduino Nano)\n
+Text Notes 8200 7650 0    60   ~ 0
+Sunday, January 21st 2018
+$Comp
+L Arduino_Nano_v3.x A1
+U 1 1 5A64DE55
+P 2550 2800
+F 0 "A1" H 2350 3825 50  0000 R CNN
+F 1 "Arduino_Nano_v3.x" H 2350 3750 50  0000 R CNN
+F 2 "Modules:Arduino_Nano" H 2700 1850 50  0001 L CNN
+F 3 "" H 2550 1800 50  0001 C CNN
+	1    2550 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L L298N IC1
+U 1 1 5A64E008
+P 4400 2600
+F 0 "IC1" H 3899 3352 50  0000 L BNN
+F 1 "L298N" H 3899 1998 50  0000 L BNN
+F 2 "MULTIWATT-15" H 4400 2600 50  0001 L BNN
+F 3 "IC BRIDGE DRIVER PAR 15MULTIWATT" H 4400 2600 50  0001 L BNN
+F 4 "STMicroelectronics" H 4400 2600 50  0001 L BNN "Field4"
+F 5 "Unavailable" H 4400 2600 50  0001 L BNN "Field5"
+F 6 "Multiwatt-15 STMicroelectronics" H 4400 2600 50  0001 L BNN "Field6"
+F 7 "None" H 4400 2600 50  0001 L BNN "Field7"
+F 8 "L298N" H 4400 2600 50  0001 L BNN "Field8"
+	1    4400 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A64E074
+P 3800 3000
+F 0 "#PWR?" H 3800 2750 50  0001 C CNN
+F 1 "GND" H 3800 2850 50  0000 C CNN
+F 2 "" H 3800 3000 50  0001 C CNN
+F 3 "" H 3800 3000 50  0001 C CNN
+	1    3800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 5A64E08C
+P 3800 2000
+F 0 "#PWR?" H 3800 1850 50  0001 C CNN
+F 1 "VCC" H 3800 2150 50  0000 C CNN
+F 2 "" H 3800 2000 50  0001 C CNN
+F 3 "" H 3800 2000 50  0001 C CNN
+	1    3800 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A64E0A4
+P 2600 3900
+F 0 "#PWR?" H 2600 3650 50  0001 C CNN
+F 1 "GND" H 2600 3750 50  0000 C CNN
+F 2 "" H 2600 3900 50  0001 C CNN
+F 3 "" H 2600 3900 50  0001 C CNN
+	1    2600 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 3800 2650 3800
+Wire Wire Line
+	2600 3800 2600 3900
+$Comp
+L HC-SR04 U1
+U 1 1 5A64E10A
+P 1150 2400
+F 0 "U1" H 1150 2600 50  0000 L BNN
+F 1 "HC-SR04" H 1150 2000 50  0000 L BNN
+F 2 "XCVR_HC-SR04" H 1150 2400 50  0001 L BNN
+F 3 "Unavailable" H 1150 2400 50  0001 L BNN
+F 4 "Ultrasonic Sensor Module" H 1150 2400 50  0001 L BNN "Field4"
+F 5 "OSEPP" H 1150 2400 50  0001 L BNN "Field5"
+F 6 "5.95 USD" H 1150 2400 50  0001 L BNN "Field6"
+F 7 "None" H 1150 2400 50  0001 L BNN "Field7"
+F 8 "HC-SR04" H 1150 2400 50  0001 L BNN "Field8"
+	1    1150 2400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3050 2800 3800 2800
+Wire Wire Line
+	3050 2900 3700 2900
+Wire Wire Line
+	3700 2900 3700 2700
+Wire Wire Line
+	3700 2700 3800 2700
+Wire Wire Line
+	3050 3000 3650 3000
+Wire Wire Line
+	3650 3000 3650 2600
+Wire Wire Line
+	3650 2600 3800 2600
+Wire Wire Line
+	3050 3100 3600 3100
+Wire Wire Line
+	3600 3100 3600 2500
+Wire Wire Line
+	3600 2500 3800 2500
+Wire Wire Line
+	3800 2300 3800 2000
+$Comp
+L D D1
+U 1 1 5A64E42C
+P 1600 1300
+F 0 "D1" H 1600 1400 50  0000 C CNN
+F 1 "D" H 1600 1200 50  0000 C CNN
+F 2 "" H 1600 1300 50  0001 C CNN
+F 3 "" H 1600 1300 50  0001 C CNN
+	1    1600 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L CP1_Small C1
+U 1 1 5A64E487
+P 1950 1300
+F 0 "C1" H 1960 1370 50  0000 L CNN
+F 1 "1000uF" H 1960 1220 50  0000 L CNN
+F 2 "" H 1950 1300 50  0001 C CNN
+F 3 "" H 1950 1300 50  0001 C CNN
+	1    1950 1300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1750 1300 1850 1300
+Wire Wire Line
+	1800 1100 1800 1500
+Wire Wire Line
+	1800 1500 2450 1500
+Wire Wire Line
+	2450 1500 2450 1800
+Connection ~ 1800 1300
+$Comp
+L VCC #PWR?
+U 1 1 5A64E5CB
+P 1450 1300
+F 0 "#PWR?" H 1450 1150 50  0001 C CNN
+F 1 "VCC" H 1450 1450 50  0000 C CNN
+F 2 "" H 1450 1300 50  0001 C CNN
+F 3 "" H 1450 1300 50  0001 C CNN
+	1    1450 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1100 700  1100
+Wire Wire Line
+	700  1100 700  2700
+Wire Wire Line
+	700  2700 1350 2700
+Wire Wire Line
+	1350 2700 1350 2500
+Wire Wire Line
+	1350 2200 1850 2200
+$Comp
+L GND #PWR?
+U 1 1 5A64E6D0
+P 1850 2200
+F 0 "#PWR?" H 1850 1950 50  0001 C CNN
+F 1 "GND" H 1850 2050 50  0000 C CNN
+F 2 "" H 1850 2200 50  0001 C CNN
+F 3 "" H 1850 2200 50  0001 C CNN
+	1    1850 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 2400 1450 2400
+Wire Wire Line
+	1450 2400 1450 2700
+Wire Wire Line
+	1450 2700 2050 2700
+Wire Wire Line
+	2050 2800 1500 2800
+Wire Wire Line
+	1500 2800 1500 2300
+Wire Wire Line
+	1500 2300 1350 2300
+$Comp
+L SW_Push_Dual SW1
+U 1 1 5A64E8FC
+P 1100 3150
+F 0 "SW1" H 1150 3250 50  0000 L CNN
+F 1 "Button" H 1100 2880 50  0000 C CNN
+F 2 "" H 1100 3350 50  0001 C CNN
+F 3 "" H 1100 3350 50  0001 C CNN
+	1    1100 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C2
+U 1 1 5A64E96B
+P 1300 3250
+F 0 "C2" H 1310 3320 50  0000 L CNN
+F 1 "1uF" H 1310 3170 50  0000 L CNN
+F 2 "" H 1300 3250 50  0001 C CNN
+F 3 "" H 1300 3250 50  0001 C CNN
+	1    1300 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A64EADC
+P 900 3350
+F 0 "#PWR?" H 900 3100 50  0001 C CNN
+F 1 "GND" H 900 3200 50  0000 C CNN
+F 2 "" H 900 3350 50  0001 C CNN
+F 3 "" H 900 3350 50  0001 C CNN
+	1    900  3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  3150 900  2900
+Wire Wire Line
+	900  2900 2000 2900
+Wire Wire Line
+	2000 2900 2000 2400
+Wire Wire Line
+	2000 2400 2050 2400
+$Comp
+L Motor_DC M1
+U 1 1 5A64EB26
+P 5650 1900
+F 0 "M1" H 5750 2000 50  0000 L CNN
+F 1 "Motor_Right" H 5750 1700 50  0000 L TNN
+F 2 "" H 5650 1810 50  0001 C CNN
+F 3 "" H 5650 1810 50  0001 C CNN
+	1    5650 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor_DC M2
+U 1 1 5A64EB7B
+P 5650 3200
+F 0 "M2" H 5750 3300 50  0000 L CNN
+F 1 "Motor_Left" H 5750 3000 50  0000 L TNN
+F 2 "" H 5650 3110 50  0001 C CNN
+F 3 "" H 5650 3110 50  0001 C CNN
+	1    5650 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 2200 5650 2500
+Wire Wire Line
+	5650 2500 5000 2500
+Wire Wire Line
+	5000 2600 5500 2600
+Wire Wire Line
+	5500 2600 5500 1700
+Wire Wire Line
+	5500 1700 5650 1700
+Wire Wire Line
+	5650 3000 5650 2700
+Wire Wire Line
+	5650 2700 5000 2700
+Wire Wire Line
+	5650 3500 5150 3500
+Wire Wire Line
+	5150 3500 5150 2800
+Wire Wire Line
+	5150 2800 5000 2800
+$Comp
+L GND #PWR?
+U 1 1 5A64EDC6
+P 2050 1300
+F 0 "#PWR?" H 2050 1050 50  0001 C CNN
+F 1 "GND" H 2050 1150 50  0000 C CNN
+F 2 "" H 2050 1300 50  0001 C CNN
+F 3 "" H 2050 1300 50  0001 C CNN
+	1    2050 1300
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
