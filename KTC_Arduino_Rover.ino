@@ -8,7 +8,6 @@
 // LEFT - 0x0A
 // RIGHT - 0x05
 
-
 bool isOn = false;
 int button = 2;
 int trig = 5;
@@ -16,7 +15,6 @@ int echo = 6;
 int reactDist = 30; //Centimeters
 void setup() 
 {
-  Serial.begin(115200);
   pinMode(button, INPUT_PULLUP);
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
@@ -25,18 +23,17 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(2), OnOff, FALLING);
 }
 
-unsigned long prevMillis = 0;
+bool switching = false; //Used to prevent switch bouncing
 void OnOff()
 {
-  unsigned long currentMillis = millis();
-  if(currentMillis - prevMillis >= 100)
-  {
-    prevMillis = currentMillis;
-     isOn = !isOn;
-     if(!isOn)
-       Stop();
-     randomSeed(currentMillis); 
-  }
+  if(switching == true)
+    return;
+  switching = true;
+   isOn = !isOn;
+   if(!isOn)
+     Stop();
+   delay(1000);
+   switching = false;
 }
 
 unsigned long Distance()
@@ -128,6 +125,12 @@ void Maneuver()
 
 void loop() 
 {
-  Serial.println(Distance());
-  delay(100);
+ if(isOn)
+ {
+   if(Distance() <= reactDist)
+     Maneuver();
+   else
+     Forward();
+    delay(100);
+  }
 }
